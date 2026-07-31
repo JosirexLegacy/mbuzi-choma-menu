@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  name      String     // e.g. "Grilled Meats", "Drinks"
+  order     Int        @default(0) // controls display order
+  items     MenuItem[]
+  createdAt DateTime   @default(now())
+}
+
+model MenuItem {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Int      // stored in UGX, whole numbers only (no decimals needed)
+  imageUrl    String?
+  isAvailable Boolean  @default(true)
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
