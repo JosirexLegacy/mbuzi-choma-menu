@@ -123,7 +123,7 @@ export default async function NewCategoryPage() {
             {/* Help text */}
             <div className="flex items-center gap-2 text-xs text-white/10">
               <span className="inline-block h-1 w-1 rounded-full bg-amber-400/30" />
-              <span>Categories will appear in your menu in the order they're listed</span>
+              <span>Categories will appear in your menu in the order they&apos;re listed</span>
             </div>
           </form>
         </div>
@@ -137,7 +137,7 @@ export default async function NewCategoryPage() {
             <div>
               <p className="text-xs font-medium text-white/40">💡 Quick Tip</p>
               <p className="text-xs text-white/20 mt-1">
-                Create categories like "Starters", "Main Course", "Desserts", and "Drinks" 
+                Create categories like &quot;Starters&quot;, &quot;Main Course&quot;, &quot;Desserts&quot;, and &quot;Drinks&quot;
                 to make your menu easy to navigate.
               </p>
             </div>

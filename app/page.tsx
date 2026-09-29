@@ -3,6 +3,8 @@ import { db } from "@/lib/db";
 import { MenuItemCard } from "@/components/menu/menu-item-card";
 import { MapPin, Phone, Flame, Star, Clock, Music, Coffee, Heart } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const categories = await db.category.findMany({
     orderBy: { order: "asc" },
@@ -61,17 +63,17 @@ export default async function HomePage() {
         <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-red-500/5 rounded-full blur-3xl" />
         
         <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(15)].map((_, index) => (
             <div
-              key={i}
+              key={index}
               className="absolute rounded-full bg-amber-400/10 animate-float"
               style={{
-                width: Math.random() * 3 + 1 + 'px',
-                height: Math.random() * 3 + 1 + 'px',
-                left: Math.random() * 100 + '%',
-                top: Math.random() * 100 + '%',
-                animationDelay: Math.random() * 5 + 's',
-                animationDuration: Math.random() * 10 + 8 + 's',
+                width: `${index % 3 + 1}px`,
+                height: `${index % 3 + 1}px`,
+                left: `${index * 37 % 100}%`,
+                top: `${index * 61 % 100}%`,
+                animationDelay: `${index % 5}s`,
+                animationDuration: `${index % 10 + 8}s`,
               }}
             />
           ))}
@@ -268,7 +270,7 @@ export default async function HomePage() {
             </div>
             <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white">More Than Just Food</h2>
             <p className="max-w-2xl mx-auto text-sm md:text-base text-white/60 leading-relaxed">
-              Mbuzi Choma is a Youth Platform Africa business, bringing Uganda's 
+              Mbuzi Choma is a Youth Platform Africa business, bringing Uganda&apos;s
               rich grilling heritage to your table. Every bite is a story of 
               tradition, community, and the perfect charcoal flame.
             </p>

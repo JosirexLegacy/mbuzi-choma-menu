@@ -70,7 +70,7 @@ export function MenuItemCard({
                 {isChefSpecial && (
                   <span className="inline-flex items-center gap-1 bg-gradient-to-r from-red-500 to-pink-500 px-2 py-0.5 rounded-full text-[9px] font-black text-white shadow-lg shadow-red-500/30 uppercase tracking-wider">
                     <ChefHat className="h-2.5 w-2.5" />
-                    Chef's Pick
+                    Chef&apos;s Pick
                   </span>
                 )}
               </div>
